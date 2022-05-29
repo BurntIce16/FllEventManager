@@ -4,7 +4,9 @@ import React from "react";
 const ProjectedView = (props) => {
     return(
         <div>
-            
+            <p>I should be toggled on</p>
         </div>
     )
 }
+
+export default ProjectedView;

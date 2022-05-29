@@ -1,4 +1,5 @@
 import * as express from 'express';
+import { test } from './Tester'
 
 const router = express.Router();
 
@@ -7,7 +8,14 @@ router.get('/api/hello', (req, res, next) => {
 
 
     //res = return
-    res.json('2');
+    res.json('World');
 });
+
+router.get('/api/test', (req, res, next) => {
+    //you can call methods here from a url request
+    test();
+    res.end();
+});
+
 
 export default router;

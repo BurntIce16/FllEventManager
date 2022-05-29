@@ -21,4 +21,19 @@ $theme-colors: (
 	// add any additional color below
 );
 
+.container{
+	margin: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+button {
+    display: block;
+	width: auto;
+}
+
+
+
+
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+//@import "~bootstrap/scss/bootstrap";

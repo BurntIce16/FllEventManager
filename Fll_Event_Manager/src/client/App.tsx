@@ -1,11 +1,15 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 
+//All this page needs to do is rederict to the other pages
+
 /* HOOK REACT EXAMPLE */
 const App = (props: AppProps) => {
-	const [greeting, setGreeting] = useState<string>('');
+	//	const [greeting, setGreeting] = useState<string>('');
+	const [showProjected, setShowProjected] = React.useState(false)
 
 	useEffect(() => {
+		/*
 		async function getGreeting() {
 			try {
 				const res = await fetch('/api/hello');
@@ -16,49 +20,59 @@ const App = (props: AppProps) => {
 			}
 		}
 		getGreeting();
+
+		*/
 	}, []);
 
+	//This is pretty quick now
+	function OpenMain() {
+		async function getGreeting() {
+			try {
+				const res = fetch('/api/test');
+				await res.catch;
+			} catch (error) {
+				console.log(error);
+			}
+		}
+		getGreeting();
+	}
+	function OpenPit() {
+
+	}
+	function OpenManager() {
+		
+	}
+
+
+	//All of the html stuff goes here
 	return (
-		<main className="container my-5">
-			<h1 className="text-primary text-center">Hello {greeting}!</h1>
+		<main className="container-fluid">
+			<nav className="navbar navbar-expand-lg bg-light">
+				<div className="container-fluid" >
+					<a className="navbar-brand">Fll Event Manager</a>
+				</div>
+			</nav>
+
+			<div className="d-grid gap-2">
+				<button className="btn btn-primary" type="button" onClick={OpenMain}>Open Main Monitor</button>
+				<button className="btn btn-primary" type="button" onClick={OpenPit}>Open Pit Monitor</button>
+				<button className="btn btn-primary" type="button" onClick={OpenManager}>Open Event Manager</button>
+			</div>
+
+			<div className="text-center">
+				Centered element
+			</div>
 		</main>
 	);
+
+
+
+
+
+
+
 };
 
-interface AppProps {}
-
-/* CLASS REACT EXAMPLE */
-// class App extends React.Component<IAppProps, IAppState> {
-// 	constructor(props: IAppProps) {
-// 		super(props);
-// 		this.state = {
-// 			name: null
-// 		};
-// 	}
-
-// 	async componentDidMount() {
-// 		try {
-// 			let r = await fetch('/api/hello');
-// 			let name = await r.json();
-// 			this.setState({ name });
-// 		} catch (error) {
-// 			console.log(error);
-// 		}
-// 	}
-
-// 	render() {
-// 		return (
-// 			<main className="container my-5">
-// 				<h1 className="text-primary text-center">Hello {this.state.name}!</h1>
-// 			</main>
-// 		);
-// 	}
-// }
-
-// export interface IAppProps {}
-
-// export interface IAppState {
-// 	name: string;
-// }
+interface AppProps { }
 
 export default App;
