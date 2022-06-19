@@ -37,6 +37,22 @@ function StopWatch() {
         setTime(15000);
     };
 
+
+    function startStopwatch() {
+        async function getStart() {
+            try {
+                const res = await fetch('/api/timer/start');
+                const state = await res.json();
+                console.log(state);
+                setIsActive(state);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getStart();
+    }
+
+
     return (
         <div className="stop-watch">
             <Timer time={time} />
@@ -49,6 +65,9 @@ function StopWatch() {
             />
         </div>
     );
+
+
 }
+
 
 export default StopWatch;

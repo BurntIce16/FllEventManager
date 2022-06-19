@@ -1,12 +1,19 @@
 import React from "react";
-//import "./ControlButtons.css";
+import StopWatch from '../components/StopWatch';
+import MatchCounter from "./MatchCounter";
 
-const ProjectedView = (props) => {
+const ProjectedView = () => {
     return(
         <div>
-            <p>I should be toggled on</p>
+            <h1>Main view</h1>
+            <StopWatch></StopWatch>
+            <MatchCounter></MatchCounter>
+            
+
         </div>
     )
 }
+
+
 
 export default ProjectedView;

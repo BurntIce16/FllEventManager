@@ -1,20 +1,19 @@
 import * as express from 'express';
 import apiRouter from './routes';
-import * as IpAddress from 'ip-address';
+//import getIpAddress from 'local-ipv4-address';
 
-const app = express();
+async function serverStart() {
 
-app.use(express.static('public'));
-app.use(apiRouter);
+    const app = express();
 
-var ip:string;
+    app.use(express.static('public'));
+    app.use(apiRouter);
 
-const port = process.env.PORT || 3000;
-var localIpV4Address = require("local-ipv4-address");
+    var ip: string;
 
-localIpV4Address().then(function(ipAddress){
-    console.log("Server Running at " + ipAddress + ":" + port);
-    // My IP address is 10.4.4.137
-    ip = ipAddress;
-}).then(app.listen(port));
+    const port = Number.parseInt(process.env.PORT || "3000");
 
+    //const ipAddress = await getIpAddress();
+    app.listen(port, '0.0.0.0');
+}
+serverStart();
