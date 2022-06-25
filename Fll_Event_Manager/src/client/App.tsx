@@ -14,22 +14,6 @@ const App = (props: AppProps) => {
 	const [showPit, setShowPit] = React.useState(false);
 	const [showManager, setShowManager] = React.useState(false);
 
-	useEffect(() => {
-		/*
-		async function getGreeting() {
-			try {
-				const res = await fetch('/api/hello');
-				const greeting = await res.json();
-				setGreeting(greeting);
-			} catch (error) {
-				console.log(error);
-			}
-		}
-		getGreeting();
-
-		*/
-	}, []);
-
 	function ShowScreen(screen: string){
 		ClearScreen();
 		if(screen === "buttons"){

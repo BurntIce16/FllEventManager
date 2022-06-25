@@ -19,7 +19,7 @@ const MatchCounter = () => {
                     throw Error(res.statusText);
                 }
             }).then(json => {
-                console.log(json);
+                //console.log(json);
                 setMatch(json['match']);
             })
         }

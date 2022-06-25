@@ -9,8 +9,6 @@ async function serverStart() {
     app.use(express.static('public'));
     app.use(apiRouter);
 
-    var ip: string;
-
     const port = Number.parseInt(process.env.PORT || "3000");
 
     //const ipAddress = await getIpAddress();

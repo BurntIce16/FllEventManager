@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import MatchConfigButton from "./MatchConfigButton";
+import MatchUploader from "./MatchUploader";
+import TableCounter from "./TableCounter";
 
 
 const Manager = () => {
@@ -10,6 +12,8 @@ const Manager = () => {
         <div>
             <h1>Manager</h1>
             <MatchConfigButton></MatchConfigButton>
+            <MatchUploader></MatchUploader>
+            <TableCounter></TableCounter>
         </div>
     )
 }

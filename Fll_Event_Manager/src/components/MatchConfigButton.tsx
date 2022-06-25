@@ -26,8 +26,8 @@ const MatchConfigButton = () => {
         start();
     }
 
-    const handleChange = event => {
-        setNewMatch(event.target.value);
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setNewMatch(parseInt(event.target.value));
       };
 
 
@@ -36,7 +36,7 @@ const MatchConfigButton = () => {
         <div>
             <MatchCounter></MatchCounter>
             <h3>New Match #{newMatch}</h3>
-            <input type={"number"} value={newMatch} onChange={handleChange}></input>
+            <input type="number" value={newMatch} onChange={handleChange}></input>
             <button onClick={updateMatch}>Update Match Number</button>
         </div>
     )
